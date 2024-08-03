@@ -4,7 +4,4 @@
 
 ---
 
-Lab6a:
-
-<img src="https://csc570e.uis.edu/api/badges/CSC561A-420245/tnguy310/status.svg?branch=master">
-
+All the labs, assignments, and final project from CSC561A course.
