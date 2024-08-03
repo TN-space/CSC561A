@@ -1,0 +1,45 @@
+
+
+body{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left, .right {
+    width: 40%;
+}
+
+.wrapper{
+    background-color: rgb(201, 201, 196);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 50%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block; 
+    box-sizing: border-box;
+    text-align: center;
+    cursor: default;
+    text-decoration: none; 
+    color: buttontext; 
+    background-color: buttonface;
+    padding: 1px 3px;
+    border-width: 0.5px;
+    border-style: outset;
+    border-color: buttonborder;
+    width: 100px;
+    height: 22px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #d6d4d4;
+}

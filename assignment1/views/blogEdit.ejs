@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="left">
+<h1>Edit Blog:</h1>
+<% if(errors.length > 0){ %>
+    <ul>
+        <% errors.forEach(function(error){ %>
+            <li style="color:red"><%= error.msg %></li>
+        <% }) %>
+    </ul>
+<% } %>
+
+<form method="POST" action="/blogs/edit/<%= blog._id %>">
+    <input type="hidden" name="_method" value="PUT" />
+    <label>Title:</label><br>
+    <input type="text" name="title" value="<%= blog.title %>"><br>
+    <label>Body:</label><br>
+    <input type="text" name="body" value="<%= blog.body %>"><br>
+    <label>Slug:</label><br>
+    <input type="text" name="slug" value="<%= blog.slug %>"><br>
+    <label>Author:</label><br>
+    <select name="author">
+        <% if(users && users.length > 0) { %>
+            <% users.forEach(user => { %>
+                <option value="<%= user._id %>" <% if(JSON.stringify(user._id) === JSON.stringify(blog.author._id)) { %> selected <% } %> >
+                    <%= user.name %>
+                </option>
+            <% }); %>
+        <% } else { %>
+            <option disabled>No users found</option>
+        <% } %>
+    </select><br><br>
+    <input class="btn" type="submit" value="Edit">
+    <a class="btn" href="/blogs">Cancel</a>
+</form>
+</div>
+
+<% include partials/footer %>
